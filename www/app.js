@@ -120,6 +120,18 @@ angular.module('omgApp', ['smoothScroll', 'angular-carousel'])
     console.log($scope.websiteContent.projects);
     
   })
-.controller('site2', function($scope, $timeout, smoothScroll) {
+.controller('site2Controller', function($scope, $timeout) {
+   
+    $scope.showPage = 'none';
+    $scope.changePage = function(page){
+    $scope.showPage = 'none';
+        
+        $timeout(function(){
+            $scope.showPage = page;
+        console.log(page);
+        }, 1500);
+        
+        
+    };
     
 });
