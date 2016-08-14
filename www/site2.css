@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+}
+
+nav{
+    background-color: black;
+    color: white;
+    height: 10%;
+    width: 100%;
+    position: fixed;
+}
+
+nav ul{
+    
+}
+
+nav li{
+    display: inline;
+    padding: 5px 10px;
+}
+
+.content-container {
+    margin-top: 8%;
+	width: 100%;
+    height: 90%;
+    border: 2px solid green;
+    position: fixed;
+    overflow: hidden;
+}
+section{
+    width: 100vw;
+    height: 100%;
+    
+}
+.page1 {
+	background-image: url(img/bkg/geometry.png);
+}
+.page2 {
+	background-image: url(img/bkg/congruent_pentagon.png);
+}

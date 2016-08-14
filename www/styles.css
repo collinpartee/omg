@@ -1,0 +1,733 @@
+body {
+    margin: 0;
+/*    height: 450vh;*/
+    font-family: sans-serif;
+}
+.page {
+/*    height: 100vh;*/
+    padding: 5em;
+}
+.pane {
+    width: 50%;
+    height: 100%;
+/*    background-color: red;*/
+/*    border: 5px solid black;*/
+}
+h1 {
+    font-size: 5em !important;
+/*    color: white;*/
+    font-weight: 100 !important;
+    margin: 0 !important;
+}
+h2 {
+    font-size: 4em !important;
+/*    color: white;*/
+    font-weight: 100 !important;
+    margin: 0;
+}
+.accent-text{
+    color: gold;
+}
+a:focus, a:hover{
+    color: lightblue!important; 
+    text-decoration: none !important;
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+/* nav bar */
+/* ~~~~~~~~~~~~~~~~ */
+
+nav {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    z-index: 1;
+    padding: .5em;
+    height: 4.5em;
+}
+.real-nav {
+    color: white;
+    width: 70%;
+    display: flex;
+    align-items: center;
+/*    justify-content: center;*/
+    /*    padding: .5em;*/
+    margin: 0 auto;
+}
+nav .logo {
+    /*   margin-left: 5em;*/
+    width: 15%;
+}
+
+.logo img{
+    width: 60%;
+}
+
+nav ul {
+    width: 70%;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.2em;
+}
+.selectedLink {
+    color: lightblue;
+    text-decoration: none;
+    font-weight: 100;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightblue;
+}
+nav li a:hover {
+    color: lightblue;
+    text-decoration: none;
+    font-weight: 100;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightblue;
+}
+
+nav .social {
+    width: 15%;
+    text-align: right;
+    padding: 10px;
+}
+nav .social img{
+    width: 1.9em;
+    margin: 0 5px;
+    
+}
+nav .social img:hover{
+    opacity: .5;
+    
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+/* landing section */
+/* ~~~~~~~~~~~~~~~~ */
+
+#landing {
+/*
+    background-image: url(img/BGlanding.png);
+    background-size: cover;
+*/
+    
+    background-image: url(img/bkg/geometry.png);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+.landingQuote-container {
+    width: 50%;
+    color: white
+}
+.landingQuote-container h1 {
+    color: white;
+}
+.landingQuote {}
+.landingQuote span {
+    color: gold;
+    font-weight: 200;
+}
+.citation {
+    text-align: right;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 20px;
+    font-size: 2em;
+    font-weight: 100;
+}
+.citation #small-line {
+    width: 25px;
+    height: 2px;
+    background-color: gold;
+    margin-right: 10px;
+}
+#leaveLanding {
+    align-self: flex-end;
+/*    width: 100%;*/
+    text-align: center;
+}
+#landing i {
+    color: white;
+    /*    align-self: flex-end;*/
+    font-size: 3em;
+    font-weight: 100;
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+/* works section */
+/* ~~~~~~~~~~~~~~~~ */
+
+#works {
+    padding: 0;
+/*
+    background-image: url(img/BGworks2.png);
+    background-size: cover;
+*/
+    
+    background-image: url(img/bkg/greyfloral.png);
+    display: flex
+}
+
+.worksTitle {
+    color: black;
+    text-align: right;
+/*    width: 75%;*/
+    padding-top: 20%;
+    padding-right: 30%;
+}
+
+#worksList{
+    padding-top: 15%;
+    padding-right: 10%;
+    float: right;
+}
+
+#worksList li{
+    margin: 1.5em 0;
+    list-style-type: none;
+    font-size: 1.3em;
+    font-weight: 100;
+}
+
+#worksList li:hover{
+    color: gold;
+    font-weight: 200;
+    border-right: 1px solid gold;
+    padding-right: 10px;
+}
+
+.selectedWorks{
+    color: gold;
+    font-weight: 200;
+    border-right: 1px solid gold;
+    padding-right: 10px;
+}
+
+#workQuickView{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.projectDtls-container{
+    width: 100%;
+
+    
+}
+.projectDtls-img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+
+.projectDtls{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+}
+.projectDtls-show{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.projectDtls-real{
+    width: 70%;
+    height: 70%;
+    background-color: transparent;
+    text-align: center;
+    color: white;
+        margin-top: 45%;
+}
+.projectDtls-real div{
+   background-color: gold;
+    height: 1px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.projectDtls-real button{
+   background-color: gold;
+   border-color: gold;
+    color: white;
+        width: 10em;
+    height: 3em;
+    margin-top: 4em;
+}
+
+.hvr-grow:hover .projectDtls, .hvr-grow:focus .projectDtls, .hvr-grow:active .projectDtls {
+/*
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+*/
+/*    display: block;*/
+     -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+}
+
+
+#works ul{
+        width: 100%;
+    height: 100%;
+}
+
+.layer{
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-position-y: 45%;
+    background-repeat: no-repeat;
+    back
+}
+.layer img{
+    width: 100%;
+    height: 100%;
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+
+
+/* about section */
+
+
+/* ~~~~~~~~~~~~~~~~ */
+
+#about {
+/*
+    background-image: url(img/BGabout.png);
+    background-size: cover;
+*/
+    
+    background-image: url(img/bkg/hoffman.png);
+    -webkit-transition: all 1 ease;
+    transition: all 1 ease;
+}
+#aboutTitle-container{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 5%;
+} 
+#aboutTitle-container h1, #aboutTitle-container h2 {
+    
+    color: white;
+/*    padding-bottom: 20px;*/
+}
+#aboutTitle-container div {
+    
+    background-color: gold;
+    height: 2px;
+    width: 30%;
+    margin: 1.5em auto;
+/*        padding: 1em;*/
+}
+
+.about-content{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.about-content li{
+    list-style-type: none;
+}
+.about-content p{
+    font-size: 1.5em;
+    color: white;
+    font-weight: 100;
+    line-height: 2em;
+}
+
+.aboutPane{
+    width: 50%;
+}
+.aboutPane div{
+    display: block !important;
+    background-color: rgba(1,1,1,.5);
+    border-color: rgba(1,1,1,.5);
+    color: white;
+    font-size: 1.2em;
+}
+
+.aboutPane button{
+    width: 10em;
+    height: 3em;
+    border-radius: 5px;
+    margin-bottom: 2em;
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+
+
+/* services section */
+
+
+/* ~~~~~~~~~~~~~~~~ */
+
+#services {
+    background-image: url(img/BGservices.png);
+    background-size: cover;
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+/* blog section */
+/* ~~~~~~~~~~~~~~~~ */
+
+#blog {
+    background-image: url(img/BG5.png);
+    background-size: cover;
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+/* contact section */
+/* ~~~~~~~~~~~~~~~~ */
+
+#contact {
+/*
+    background-image: url(img/bgContact.png);
+    background-size: cover;
+*/
+    background-image: url(img/bkg/paisley.png);
+    display: flex;
+}
+
+#contactTitle{
+    width: 55%;
+    text-align: right;
+    color: white;
+}
+
+#contactInfo{
+    padding-right: 20%;
+    width: 45%;
+    margin-top: 40%;
+    float: right;
+    font-size: 1.2em;
+}
+
+#contactInfo div{
+ margin-bottom: 15%;
+/*    text-align:;*/
+    
+}
+
+#contactInfo div span{
+    display: block;
+    padding: 5px 0;
+}
+
+#contact form{
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 17%;
+    font-size: 1.3em;
+
+}
+
+#contact span{
+    color: white;
+    font-weight: 100;
+    width:100%;    
+}
+
+#contact input{
+    width:100%;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 1px solid white;
+    height: 2.2em;
+    margin-bottom: 3.0em;
+    color: white;
+    font-size: 1.3em;
+}
+#contact textarea{
+    width:100%;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 1px solid white;
+    height: 5em;
+    margin-bottom: 3.5em;
+    color: white;
+    font-size: 1.3em;
+}
+
+#contactMe{
+   float: right;
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+/* project detail */
+/* ~~~~~~~~~~~~~~~~ */
+
+#oneProject{
+/*
+    background-image: url(img/BG5.png);
+    background-size: cover;
+*/
+    background-image: url(img/bkg/congruent_pentagon.png);
+    background-size: cover;
+    /* display: flex; */
+    height: 100% !important;
+    padding: 4.5em 0 0 0 !important;
+}
+
+#deetsHeader{
+    width: 100%;
+    background-color: black;
+    color: white;
+    margin:0;
+    text-align: center;
+/*
+    font-size: 2.5em;
+    font-weight: 100;
+*/
+/*    height: 20%*/
+}
+#deetsHeader h2{
+  margin:0;
+    padding: 7px;
+        
+}
+
+.deetsBlurb{
+    font-size: 1.5em;
+    font-weight: 100;
+    padding: 7px;
+}
+#faux-hr{
+    width: 10%;
+    margin: 7px auto;
+    height: 1px;
+    background-color: gold;
+}
+.deetsTags{
+    font-size: 1.3em;
+    font-weight: 100;
+    padding:10px;
+}
+
+.deetsDemo button{
+    background-color: darkgoldenrod;
+    border-color: darkgoldenrod;
+/*    width: 20em;*/
+/*    height: 4em;*/
+    font-size: 1.3em;
+    font-weight: 100;
+    padding: .7em;
+    border-radius: 10px;
+    margin-bottom: 20px
+    
+}
+
+#deetsContent{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.deetsSplashImg{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center
+}
+
+.deetsSplashImg img{
+    width: 50%;
+/*    margin: 0 auto;*/
+}
+
+.deetsInfo p{
+    font-size: 1.5em;
+}
+#closeDeets{
+    position: fixed;
+    top: 5em;
+    right: 5em;
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+/* footer */
+/* ~~~~~~~~~~~~~~~~ */
+
+footer {
+    height: 10em;
+    background-color: gray;
+    width: 100%;
+    display: flex;
+    align-content: center;
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+/* media queries */
+/* ~~~~~~~~~~~~~~~~ */
+
+/*
+.desktop{
+    display: inherit;
+}
+*/
+.mobile{
+    display: none;
+}
+
+.mobDtls{
+        position: relative;
+    top: 80vh;
+    text-align: center;
+    width: 100%;
+    height: 20vh;
+}
+.mobDtls div{
+        font-size: 2em;
+    font-weight: 100;
+}
+.mobDtls li{
+    list-style-type: none;
+    display: inline-block;
+        padding: 0 10px;
+}
+.mobDtls ul{
+    padding: 0;
+}
+
+
+@media only screen and (max-device-width: 480px) {
+    /* define mobile specific styles come here */
+    .desktop {
+        display: none !important;
+    }
+    .mobile {
+        display: block !important;
+        width: 100%;
+        height: 100%;
+    }
+    h2 {
+    font-size: 3em !important;
+}
+    h1 {
+    font-size: 4em !important;
+}
+    .page {
+        padding: 2em;
+    }
+    .landingQuote-container {
+        width: 90%;
+    }
+    #works {
+        display: block;
+            height: 100vh;
+    }
+    .pane {
+        width: 100%;
+        height: 50%;
+    }
+    #aboutTitle-container {
+    width: 90%;
+    }
+    .about-content {
+    width: 95%;
+    }
+    .aboutPane {
+    display: none;
+    }
+    #contact{
+/*        display: block;*/
+    }
+
+    #contactInfo {
+        padding-right: 0;
+}
+    #contactTitle {
+/*    width: 100%;*/
+}
+    #contactInfo {
+    width: 50%;
+}
+/*
+    .pane form{
+        display: none !important;
+    }
+*/
+    nav ul{
+/*        display: none !important;*/
+    }
+    nav .social{
+        display: none !important;
+    }
+    .real-nav {
+            width: 90%;
+    }
+    #showNav{
+        text-align: right;
+        z-index: 3;
+    }
+    .mobileNav{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    background-color: rgba(0,0,0,.8);
+    z-index: 2;
+        top: 0;
+    }
+    .mobileNav li{
+            display: block;
+    padding: 2em;
+    font-size: 1.5em;
+    }
+    .mobileNav ul{
+        width: 100%;
+        text-align: center;
+         display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+/*  background-color: grey;*/
+  height: 100%;
+    }
+    #deetsContent {
+    width: 90%;
+}
+    .deetsSplashImg img {
+    width: 85%;
+}
+    #closeDeets {
+    right: 1em;
+    color: white;
+    background-color: rgba(1,1,1,.5);
+    border-color: rgba(1,1,1,.5);
+}
+    nav .logo{
+            width: 40%;
+    margin-top: .5em;
+    }
+    
+    nav .logo img{
+        width: 100%;
+    }
+}

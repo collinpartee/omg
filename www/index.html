@@ -1,0 +1,270 @@
+<!doctype html>
+<html ng-app="omgApp">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://use.fontawesome.com/cbf8706be8.js"></script>
+    <script src="app.js"></script>
+<!--    <script src="../bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js"></script>-->
+    <script src="angular-smooth-scroll.js"></script>
+    <!--    <script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="hover.css">
+    <link rel="stylesheet" href="animate.css">
+    <!--    <link rel="stylesheet" href="../bower_components/angular-bootstrap/ui-bootstrap-csp.css">-->
+<!--    <script src="../bower_components/angular-touch/angular-touch.min.js"></script>-->
+    <script src="angular-touch.min.js"></script>
+<!--    <script src="../bower_components/angular-carousel/dist/angular-carousel.js"></script>-->
+    <script src="angular-carousel.js"></script>
+    <link rel="stylesheet" href="angular-carousel.min.css" />
+<!--    <link rel="stylesheet" href="../bower_components/angular-carousel/dist/angular-carousel.min.css" />-->
+
+</head>
+
+<body ng-controller="omgController as omg">
+    <nav>
+        <div class="real-nav">
+            <div class="logo">
+                <img src="img/Logo3.png" />
+            </div>
+            <ul class="desktop">
+                <li ng-click="selected = 'landingS'">
+                    <a href="#" scroll-to="landing" ng-class="{'selectedLink': selected == 'landingS'}">Home</a>
+                </li>
+                <li ng-click="selected = 'workS' ">
+                    <a href="#" scroll-to="works" ng-class="{'selectedLink': selected== 'workS'}">Works</a>
+                </li>
+                <li ng-click="selected = 'aboutS'">
+                    <a href="#" scroll-to="about" ng-class="{'selectedLink': selected == 'aboutS'}">About Me</a>
+                </li>
+                <!--
+                <li ng-click="selected = 'serviceS'">
+                    <a href="#" scroll-to="services" ng-class="{'selectedLink': selected == 'serviceS'}">Services</a>
+                </li>
+-->
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li ng-click="selected = 'contactS'">
+                    <a href="#" scroll-to="contact" ng-class="{'selectedLink': selected == 'contactS'}">Contact</a>
+                </li>
+            </ul>
+
+            <div class="social">
+                <a href="#"><img src="img/Linkedin.png" /></a>
+                <a href="#"><img src="img/Facebook.png" /></a>
+                <a href="#"><img src="img/Twitter.png" /></a>
+            </div>
+            
+            <div class="mobile" id="showNav" ng-click="navShown = !navShown"><span ng-if="!navShown">Menu</span><span ng-if="navShown">Close</span></div>
+            
+            <div ng-show="navShown" class="mobileNav" ng-class="{'bounceInDown': navShown}">
+                <ul>
+                 <li ng-click="selected = 'landingS'">
+                    <a href="#" scroll-to="landing" ng-class="{'selectedLink': selected == 'landingS'}">Home</a>
+                </li>
+                <li ng-click="selected = 'workS' ">
+                    <a href="#" scroll-to="works" ng-class="{'selectedLink': selected== 'workS'}">Works</a>
+                </li>
+                <li ng-click="selected = 'aboutS'">
+                    <a href="#" scroll-to="about" ng-class="{'selectedLink': selected == 'aboutS'}">About Me</a>
+                </li>
+                 <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li ng-click="selected = 'contactS'">
+                    <a href="#" scroll-to="contact" ng-class="{'selectedLink': selected == 'contactS'}">Contact</a>
+                </li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    <section class="page" id="landing" ng-show="!showDtl">
+        <div ng-if="pageLoaded" class="landingQuote-container animated" ng-class="{'bounceIn': pageLoaded}" >
+            <h1 class="landingQuote"><span>OMG!</span></h1>
+            <h1>It's that guy Collin P!</h1>
+            <div class="citation">
+                <div id="small-line"></div>Everyone Everywhere
+            </div>
+        </div>
+        <div id="leaveLanding">
+        <a href="#" scroll-to="works"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            </div>
+    </section>
+
+
+    <section class="page" id="works" ng-show="!showDtl">
+        <div class="pane desktop">
+            <div class="worksTitle">
+                <h2>My</h2>
+                <h2>Projects</h2>
+            </div>
+            <div class="worksTitle" id="worksList">
+                <ul ng-repeat="projects in websiteContent.projectList">
+                    <li class="" ng-click="showProject(projects)" ng-class="{'selectedWorks': projects.projectName == projectResources.projectName}">{{projects.projectName}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="pane desktop" id="workQuickView">
+
+            <div class="projectDtls-container" ng-repeat="resources in projectResources.projectPics track by $index">
+                <div class="projectDtls-img hvr-grow" ng-style="{'background-image':'url(' + resources +')'}">
+                    <div class="projectDtls">
+                        <div class="projectDtls-real">
+                            <h3>{{projectResources.projectName}}</h3>
+                            <div></div>
+                            <p ng-repeat="tags in projectResources.projectTags">#{{tags}}</p>
+                            <button class="btn" ng-click="showProjectDtl(projectResources)">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mobile">
+        <ul rn-carousel rn-carousel-control class="image">
+            <li ng-repeat="mobProject in projectList.projectList track by $index">
+                <div class="layer"  ng-click="showProjectDtl(mobProject)"  ng-style="{'background-image':'url(' + mobProject.projectPics[0] +')'}">
+<!--                    <img ng-src="{{mobProject.projectPics[0]}}" />-->
+<!--                    <div rn-carousel-indicators ng-if="mobProject.projectPics.length > 1" slides="slides" rn-carousel-index="carouselIndex"></div>-->
+                    <div class="mobDtls">
+                    <div>{{mobProject.projectName}}</div>
+                    <ul>
+                        <li ng-repeat="tags in mobProject.projectTags">{{tags}}</li>
+                    </ul>
+                        </div>
+                </div>
+            </li>
+        </ul>
+        </div>
+
+    </section>
+
+    <section class="page" id="oneProject" ng-show="showDtl">
+        <div id="deetsHeader">
+            <h2>{{projectDeets.projectName}}</h2>
+            <div class="deetsBlurb">{{projectDeets.projectShortDescription}}</div>
+            <div id="faux-hr"></div>
+            <div class="deetsTags"><span ng-repeat="tag in projectDeets.projectTags">#{{tag}} </span></div>
+            <div class="deetsDemo">
+                <button><a ng-href="{{projectDeets.projectLink}}">App store download</a></button>
+            </div>
+        </div>
+        <div id="deetsContent">
+            <div class="deetsSplashImg">
+                <img ng-src="{{projectDeets.projectPics[0]}}" />
+            </div>
+            <div class="deetsInfo">
+                <p ng-repeat="description in projectDeets.projectLongDescription track by $index">{{description}}</p>
+<!--
+                <p>“What’ll it be hun?” “Espresso, two shots over ice. Put it in a small cup and easy on the ice.” I said, taking out my credit card before she told me what astronomical price I’d be paying.</p>
+
+                <p>“Three seventy-eight hun.” The barista said as she swiped my card through the reader. Four dollars for a fucking espresso I thought, sliding my credit card between my wallet, not bothering to put it in the slot. Fuck Starbucks and fuck this heap of ice she put in my drink after I specifically told her not to go balls in on. “Thank you ma’am.” I said with a wink and a sarcastic nod. She gave me an “Uh Huh, have a good day hun.” nonchalantly as if to say “I heard you wanted little ice, but I’m stuck in this hipster infested shit hole, so enjoy.” Have you ever been inside a Starbucks before? First of all, everything’s green and mahogany and there’s more recycled phone-charging wood in there to build a home. You have the guy who you pray you’re in front of so you’re not standing for a half and hour listening to him order his Caramel Non-Fat Soy Mocha Laté with extra whipped cream and a spritz of estrogen. Then you have the little girls who want—can you believe it— ten Caramel Non-Fat Soy Mocha Bullshits for their friends. You find yourself standing there negotiating with your future criminal attorney. “If I rip the little one’s blonde hair off her head, while tripping the slutty one, causing her to break a nose, I get 10 years for assault and battery?” “Yeah, but we can probably file an appeal and get you some community service, three years probation and some anger management classes.” Meanwhile, they have the audacity to play this indie music, brought to you by Molly “I sound like every other girl” Hade. I was going to say worse than elevator music, but I swear to God, I’ve been in thousands of elevators. No fucking music in any of them.</p>
+-->
+            </div>
+        </div>
+        <button id="closeDeets" ng-click="closeProjectDtl()">X Close</button>
+    </section>
+
+    <section class="page" id="about" ng-show="!showDtl">
+        <div id="aboutTitle-container">
+            <h2>Yes it's really <span style="color: gold">me</span></h2>
+            <div></div>
+            <h1><span style="color: gold">Collin</span> Partee</h1>
+        </div>
+        <div class="about-content">
+<!--            <p>{{aboutMe.about}}</p>-->
+            <p>{{websiteContent.aboutMe.about}}</p>
+        </div>
+        <div class="about-content">
+            <div class="aboutPane">
+                <button type="button" class="btn btn-default" ng-click="likeCollapsed = !likeCollapsed">Likes</button>
+                <!--                <div>-->
+                <div ng-show="!likeCollapsed" class="well well-lg animated" ng-class="{'flipOutX': (likeCollapsed==true), 'flipInX': !likeCollapsed}">
+                    <ul>
+                        <li ng-repeat="likes in websiteContent.aboutMe.likes">{{likes}}</li>
+                    </ul>
+                </div>
+                <!--                </div>-->
+
+            </div>
+            <div class="aboutPane">
+                <button type="button" class="btn btn-default" ng-click="dislikeCollapsed = !dislikeCollapsed">Dislikes</button>
+                    <div ng-show="!dislikeCollapsed" class="well well-lg animated" ng-class="{'flipOutX': (dislikes==true), 'flipInX': !dislikes}">
+                    <ul>
+                        <li ng-repeat="dislikes in websiteContent.aboutMe.dislikes">{{dislikes}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    <section class="page" id="services" ng-show="!showDtl">
+
+    </section>
+-->
+
+    <!--
+    <section class="page" id="blog">
+
+    </section>
+-->
+
+    <section class="page" id="contact" ng-show="!showDtl">
+        <div class="pane">
+            <div id="contactTitle">
+                <h2>GET IN</h2>
+                <h2 class="accent-text">TOUCH</h2>
+            </div>
+
+            <div id="contactInfo">
+                <div>
+                    <span>EMAIL:</span>
+                    <span class="accent-text" style="color:gold">collin.partee@gmail.com</span>
+                </div>
+
+                <div>
+                    <span>PHONE:</span>
+                    <span class="accent-text" style="color:gold">(770) 316 7481</span>
+                    <span class="accent-text" style="color:gold">(678) 854 4569</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pane desktop">
+            <form name="contact">
+                <span>Name:</span>
+                <br>
+                <input type="text" name="firstname">
+                <br>
+                <span>Email:</span>
+                <br>
+                <input type="text" name="email">
+                <br>
+                <span>Subject:</span>
+                <br>
+                <input type="text" name="subject">
+                <br>
+                <span>Message:</span>
+                <br>
+                <!--                <input type="text" name="lastname">-->
+                <textarea></textarea>
+                <button id="contactMe">Send</button>
+
+            </form>
+        </div>
+    </section>
+
+    <footer class="desktop">
+        <div> Created by Collin P.</div>
+    </footer>
+
+</body>
+
+</html>
