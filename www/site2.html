@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="omgApp">
+
 <head>
-<meta charset="UTF-8">
-<title>Title of the document</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Title of the document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="https://use.fontawesome.com/cbf8706be8.js"></script>
     <script src="app.js"></script>
@@ -12,40 +13,45 @@
     <link rel="stylesheet" href="hover.css">
     <link rel="stylesheet" href="animate.css">
     <script src="angular-touch.min.js"></script>
-<!--    <script src="../bower_components/angular-carousel/dist/angular-carousel.js"></script>-->
     <script src="angular-carousel.js"></script>
-<link href="site2.css" rel="stylesheet" type="text/css" />
-<link href="ferryloader.css" rel="stylesheet" type="text/css" />
+    <link href="site2.css" rel="stylesheet" type="text/css" />
+    <link href="pacman.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body ng-controller="site2Controller as site2">
-<div class="content-container">
-    <nav>
+<body ng-controller="site2">
+    <nav class="navbar navbar-default" style="margin:0;">
         <ul>
-            <li ng-click="changePage('1')"> 
-<!--                <a href="#">Page 1</a>-->
-                Page 1
-            </li>
-            <li ng-click="changePage('2')">
-<!--                <a href="#" scroll-to="about">Page 2</a>-->
-                Page 2
-            </li>
+            <li ng-click="showPage('2')">Page 2</li>
+            <li ng-click="showPage('1')">Page 1</li>
         </ul>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Action <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
     </nav>
-    
-    <section ng-if="showPage === 'none' ">
-        <ferry><chimney></chimney><waves></waves></ferry>
-    </section>
-    
-    
-    <section class="page1" id="page1" ng-if="showPage === '1' ">
-        <h1>Page 1</h1>
-    </section>
-    <section class="page2" id="page2" ng-if= "showPage === '2' ">
-        <h1>Page 2</h1>
-    </section>
-</div>    
-    
+    <div class="content-container">
+        <section ng-if="pageShowing === 'none'">
+
+            <div class="pacman"></div>
+            <div class="dot"></div>
+        </section>
+
+        <section class="page1" id="page1" ng-if="pageShowing === '1'">
+
+        </section>
+        <section class="page2" id="page2" ng-if="pageShowing === '2'">
+
+        </section>
+    </div>
+
 </body>
 
 </html>
